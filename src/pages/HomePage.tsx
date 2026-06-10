@@ -1,24 +1,49 @@
-import React from "react";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Mail, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
+import profilePic from "../assets/fndf-profile-img.jpeg";
 
 const HomePage = () => {
   return (
-    <div className="min-h-screen pt-16">
-      <section className="py-20 bg-gradient-to-r from-blue-500 to-purple-600">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold text-white sm:text-5xl md:text-6xl">
-              Full Stack Developer
+    <main className="min-h-screen bg-stone-50 pt-16">
+      <section className="border-b border-stone-200 bg-white">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-24">
+          <div>
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-800">
+              <MapPin size={16} />
+              Munich, Germany
+            </div>
+            <h1 className="max-w-4xl text-4xl font-bold tracking-normal text-stone-950 sm:text-5xl lg:text-6xl">
+              Farnoush Daliran, full-stack developer building practical React
+              applications.
             </h1>
-            <p className="mt-3 max-w-md mx-auto text-base text-gray-100 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-              Building beautiful, responsive, and user-friendly web applications
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-stone-700">
+              I build responsive web apps with React, TypeScript, Node.js,
+              Express, and MongoDB. My work combines clean interfaces, API
+              integration, authentication flows, and product thinking.
             </p>
-            <div className="mt-5 max-w-md mx-auto flex justify-center space-x-4">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link
+                to="/projects"
+                className="inline-flex items-center justify-center gap-2 rounded-md bg-stone-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-700"
+              >
+                View Projects
+                <ArrowRight size={18} />
+              </Link>
+              <a
+                href="mailto:farnoushfdf@gmail.com"
+                className="inline-flex items-center justify-center gap-2 rounded-md border border-stone-300 bg-white px-5 py-3 text-sm font-semibold text-stone-900 transition hover:border-emerald-700 hover:text-emerald-800"
+              >
+                Contact Me
+                <Mail size={18} />
+              </a>
+            </div>
+            <div className="mt-8 flex items-center gap-5">
               <a
                 href="https://github.com/farnoushdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-gray-200"
+                aria-label="GitHub profile"
+                className="text-stone-600 transition hover:text-emerald-700"
               >
                 <Github size={24} />
               </a>
@@ -26,78 +51,63 @@ const HomePage = () => {
                 href="https://www.linkedin.com/in/farnoush-daliran/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-gray-200"
+                aria-label="LinkedIn profile"
+                className="text-stone-600 transition hover:text-emerald-700"
               >
                 <Linkedin size={24} />
               </a>
               <a
-                href="mailto:contact@example.com"
-                className="text-white hover:text-gray-200"
+                href="mailto:farnoushfdf@gmail.com"
+                aria-label="Email Farnoush"
+                className="text-stone-600 transition hover:text-emerald-700"
               >
                 <Mail size={24} />
               </a>
             </div>
           </div>
-        </div>
-      </section>
 
-      <section id="contact" className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-            Get in Touch
-          </h2>
-          <div className="max-w-lg mx-auto">
-            <form className="space-y-6">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  rows={4}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                ></textarea>
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-              >
-                Send Message
-              </button>
-            </form>
+          <div className="relative mx-auto w-full max-w-md">
+            <div className="absolute inset-4 rounded-2xl bg-emerald-100" />
+            <img
+              src={profilePic}
+              alt="Farnoush Daliran"
+              className="relative aspect-[4/5] w-full rounded-2xl object-cover shadow-xl"
+            />
           </div>
         </div>
       </section>
-    </div>
+
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+          {[
+            {
+              label: "Frontend",
+              value: "React, TypeScript, Tailwind CSS",
+            },
+            {
+              label: "Backend",
+              value: "Node.js, Express, MongoDB, REST APIs",
+            },
+            {
+              label: "Strength",
+              value: "Full-stack apps with auth, routing, and responsive UI",
+            },
+          ].map((item) => (
+            <div
+              key={item.label}
+              className="rounded-lg border border-stone-200 bg-white p-6 shadow-sm"
+            >
+              <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700">
+                {item.label}
+              </p>
+              <p className="mt-3 text-lg font-semibold text-stone-950">
+                {item.value}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </main>
   );
 };
 

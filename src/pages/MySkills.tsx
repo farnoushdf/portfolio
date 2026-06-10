@@ -1,102 +1,92 @@
-import React from "react";
-import { Code2, Server, Database, Palette } from "lucide-react";
+import { Code2, Database, Palette, Server, Wrench } from "lucide-react";
 
 const MySkills = () => {
   const skillCategories = [
     {
-      title: "Frontend Development",
+      title: "Frontend",
       icon: <Code2 size={24} />,
       skills: [
         "React",
         "TypeScript",
-        "Next.js",
+        "JavaScript",
         "Tailwind CSS",
-        "HTML5",
-        "CSS3",
+        "HTML",
+        "CSS",
       ],
     },
     {
-      title: "Backend Development",
+      title: "Backend",
       icon: <Server size={24} />,
+      skills: ["Node.js", "Express", "REST APIs", "JWT Auth", "Multer"],
+    },
+    {
+      title: "Data",
+      icon: <Database size={24} />,
+      skills: ["MongoDB", "Mongoose", "Supabase", "SQL basics"],
+    },
+    {
+      title: "Design",
+      icon: <Palette size={24} />,
       skills: [
-        "Node.js",
-        "Express",
-        "Python",
-        "REST APIs",
+        "Responsive UI",
+        "Figma",
+        "Accessibility basics",
+        "Adobe Photoshop",
       ],
     },
     {
-      title: "Database",
-      icon: <Database size={24} />,
-      skills: ["MongoDB", "MySQL", "Supabase"],
-    },
-    {
-      title: "UI/UX Design",
-      icon: <Palette size={24} />,
-      skills: ["Figma", "Responsive Design", "Adobe photoshop"],
+      title: "Workflow",
+      icon: <Wrench size={24} />,
+      skills: ["Git", "GitHub", "Vite", "Netlify", "Render"],
     },
   ];
 
   return (
-    <div className="min-h-screen pt-16 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <h1 className="text-4xl font-bold text-gray-900 mb-12 text-center">
-          My Skills
-        </h1>
+    <main className="min-h-screen bg-stone-50 pt-16">
+      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700">
+            Skills
+          </p>
+          <h1 className="mt-3 text-4xl font-bold text-stone-950">
+            Tools I use to build full-stack web apps
+          </h1>
+          <p className="mt-5 text-lg leading-8 text-stone-700">
+            My strongest area is React frontend development, supported by
+            backend API work with Node.js, Express, MongoDB, and deployment
+            workflows.
+          </p>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {skillCategories.map((category, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-md p-6">
-              <div className="flex items-center mb-4">
-                <div className="p-2 bg-blue-100 rounded-lg text-blue-600 mr-3">
+        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {skillCategories.map((category) => (
+            <section
+              key={category.title}
+              className="rounded-lg border border-stone-200 bg-white p-6 shadow-sm"
+            >
+              <div className="mb-5 flex items-center gap-3">
+                <div className="rounded-lg bg-emerald-50 p-2 text-emerald-700">
                   {category.icon}
                 </div>
-                <h2 className="text-xl font-semibold text-gray-900">
+                <h2 className="text-xl font-semibold text-stone-950">
                   {category.title}
                 </h2>
               </div>
-              <div className="grid grid-cols-2 gap-3">
-                {category.skills.map((skill, skillIndex) => (
-                  <div
-                    key={skillIndex}
-                    className="bg-gray-50 rounded-lg p-3 text-gray-700 text-sm font-medium"
+              <div className="flex flex-wrap gap-2">
+                {category.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="rounded-md bg-stone-100 px-3 py-2 text-sm font-medium text-stone-700"
                   >
                     {skill}
-                  </div>
+                  </span>
                 ))}
               </div>
-            </div>
+            </section>
           ))}
         </div>
-
-        {/* <div className="mt-16">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-            Experience Level
-          </h2>
-          <div className="space-y-6">
-            {[
-              "Frontend Development",
-              "Backend Development",
-              "Database Management",
-              "UI/UX Design",
-            ].map((skill, index) => (
-              <div key={index}>
-                <div className="flex justify-between mb-2">
-                  <span className="text-gray-700">{skill}</span>
-                  <span className="text-gray-500">85%</span>
-                </div>
-                <div className="h-2 bg-gray-200 rounded-full">
-                  <div
-                    className="h-2 bg-blue-600 rounded-full"
-                    style={{ width: "85%" }}
-                  ></div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div> */}
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };
 

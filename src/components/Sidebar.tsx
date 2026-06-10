@@ -1,10 +1,9 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { Home, User, Briefcase, Code, Mail } from "lucide-react";
 
 const Sidebar = () => {
   return (
-    <div className="fixed left-0 top-0 h-screen w-16 bg-gray-900 text-white flex flex-col items-center py-8">
+    <div className="fixed left-0 top-0 hidden h-screen w-16 flex-col items-center bg-stone-950 py-8 text-white md:flex">
       <div className="space-y-8">
         <Link
           to="/"

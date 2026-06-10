@@ -1,12 +1,12 @@
-import React from "react";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 
 interface ProjectCardProps {
   title: string;
   description: string;
   image: string;
   tags: string[];
-  link?: string;
+  liveLink?: string;
+  sourceLink?: string;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -14,36 +14,49 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
   image,
   tags,
-  link,
+  liveLink,
+  sourceLink,
 }) => {
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
+    <article className="overflow-hidden rounded-lg border border-stone-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
       <img src={image} alt={title} className="w-full h-48 object-cover" />
       <div className="p-6">
-        <h3 className="text-xl font-semibold text-gray-900">{title}</h3>
-        <p className="mt-2 text-gray-600">{description}</p>
+        <h3 className="text-xl font-semibold text-stone-950">{title}</h3>
+        <p className="mt-3 leading-7 text-stone-600">{description}</p>
         <div className="mt-4 flex flex-wrap gap-2">
-          {tags.map((tag, index) => (
+          {tags.map((tag) => (
             <span
-              key={index}
-              className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm"
+              key={tag}
+              className="rounded-md bg-stone-100 px-3 py-1 text-sm font-medium text-stone-600"
             >
               {tag}
             </span>
           ))}
         </div>
-        {link && (
-          <a
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 inline-flex items-center text-blue-600 hover:text-blue-500"
-          >
-            View Project <ExternalLink size={16} className="ml-1" />
-          </a>
-        )}
+        <div className="mt-5 flex flex-wrap gap-4">
+          {sourceLink && (
+            <a
+              href={sourceLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-700 hover:text-emerald-900"
+            >
+              Source Code <Github size={16} />
+            </a>
+          )}
+          {liveLink && (
+            <a
+              href={liveLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-700 hover:text-emerald-900"
+            >
+              Live Demo <ExternalLink size={16} />
+            </a>
+          )}
+        </div>
       </div>
-    </div>
+    </article>
   );
 };
 

@@ -1,4 +1,3 @@
-import React from "react";
 import ProjectCard from "../components/ProjectCard";
 import gymImage from "../assets/Gym-Bros.png";
 import moodCocktailsImage from "../assets/Mood-Cocktails.png";
@@ -8,43 +7,53 @@ const MyProjects = () => {
     {
       title: "GymBros",
       description:
-        "A full-stack fitness tracking app built with React, Node.js, MongoDB, and Express.",
+        "Full-stack fitness tracker with authentication, protected routes, workout and meal data, progress tracking, and image upload support.",
       image: gymImage,
-      tags: ["React", "Node.js", "MongoDB", "Express"],
-      link: "https://your-gym-bros.netlify.app/",
+      tags: ["React", "Express", "MongoDB", "JWT", "Cloudinary"],
+      sourceLink: "https://github.com/farnoushdf/gym-bros-frontend-v2",
     },
     {
       title: "Mood Cocktails",
       description:
-        "An interactive app for mood-based cocktail recommendations using React, Axios, and REST APIs",
+        "Mood-based cocktail app with a React frontend, API-driven recommendations, routing, reusable components, and a separate backend.",
       image: moodCocktailsImage,
-      tags: ["React", "Axios", "REST API"],
-      link: "https://mood-cocktails.netlify.app/",
+      tags: ["React", "Axios", "REST API", "Node.js"],
+      sourceLink: "https://github.com/farnoushdf/mood-cocktails-frontend-v2",
     },
-    // {
-    //   title: "Weather Dashboard",
-    //   description:
-    //     "A weather application with detailed forecasts and animations",
-    //   image:
-    //     "https://images.unsplash.com/photo-1592210454359-9043f067919b?auto=format&fit=crop&q=80&w=800",
-    //   tags: ["React", "Weather API", "CSS Animations"],
-    //   link: "https://github.com",
-    // },
+    {
+      title: "Figma Translate Plugin",
+      description:
+        "TypeScript and Preact plugin project exploring translation workflows, Supabase integration, and single-file Vite plugin builds.",
+      image: moodCocktailsImage,
+      tags: ["TypeScript", "Preact", "Vite", "Supabase"],
+      sourceLink: "https://github.com/farnoushdf/Frame-Translate-Plugin-Vite2",
+    },
   ];
 
   return (
-    <div className="min-h-screen pt-16 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <h1 className="text-4xl font-bold text-gray-900 mb-12 text-center">
-          My Projects
-        </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <ProjectCard key={index} {...project} />
+    <main className="min-h-screen bg-stone-50 pt-16">
+      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700">
+            Selected work
+          </p>
+          <h1 className="mt-3 text-4xl font-bold text-stone-950">
+            Projects that show full-stack product thinking
+          </h1>
+          <p className="mt-5 text-lg leading-8 text-stone-700">
+            These projects highlight the skills I want to use professionally:
+            React interfaces, API integration, authentication, data models, and
+            deployment-ready application structure.
+          </p>
+        </div>
+
+        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
+          {projects.map((project) => (
+            <ProjectCard key={project.title} {...project} />
           ))}
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };
 
