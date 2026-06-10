@@ -16,7 +16,10 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold">Contact</h3>
             <a
-              href="mailto:farnoushfdf@gmail.com"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=farnoushfdf@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Email Farnoush"
               className="mt-3 block text-stone-300 transition hover:text-emerald-300"
             >
               farnoushfdf@gmail.com
@@ -46,7 +49,9 @@ const Footer = () => {
                 <Linkedin size={24} />
               </a>
               <a
-                href="mailto:farnoushfdf@gmail.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=farnoushfdf@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Email Farnoush"
                 className="text-stone-300 transition hover:text-emerald-300"
               >
