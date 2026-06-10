@@ -2,6 +2,7 @@ import ProjectCard from "../components/ProjectCard";
 import gymImage from "../assets/Gym-Bros.png";
 import moodCocktailsImage from "../assets/Mood-Cocktails.png";
 
+
 const MyProjects = () => {
   const projects = [
     {
@@ -11,6 +12,7 @@ const MyProjects = () => {
       image: gymImage,
       tags: ["React", "Express", "MongoDB", "JWT", "Cloudinary"],
       sourceLink: "https://github.com/farnoushdf/gym-bros-frontend-v2",
+      liveLink: "https://gymbrosfit.netlify.app/",
     },
     {
       title: "Mood Cocktails",
@@ -19,14 +21,16 @@ const MyProjects = () => {
       image: moodCocktailsImage,
       tags: ["React", "Axios", "REST API", "Node.js"],
       sourceLink: "https://github.com/farnoushdf/mood-cocktails-frontend-v2",
+      liveLink: "https://moody-cocktails-bar.netlify.app/",
     },
     {
       title: "Figma Translate Plugin",
       description:
         "TypeScript and Preact plugin project exploring translation workflows, Supabase integration, and single-file Vite plugin builds.",
-      image: moodCocktailsImage,
+      image: "https://raw.githubusercontent.com/farnoushdf/Frame-Translate-Plugin-Vite2/main/preview.png",
       tags: ["TypeScript", "Preact", "Vite", "Supabase"],
       sourceLink: "https://github.com/farnoushdf/Frame-Translate-Plugin-Vite2",
+      
     },
   ];
 

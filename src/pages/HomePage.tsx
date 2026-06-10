@@ -30,7 +30,9 @@ const HomePage = () => {
                 <ArrowRight size={18} />
               </Link>
               <a
-                href="mailto:farnoushfdf@gmail.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=farnoushfdf@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-md border border-stone-300 bg-white px-5 py-3 text-sm font-semibold text-stone-900 transition hover:border-emerald-700 hover:text-emerald-800"
               >
                 Contact Me
@@ -57,7 +59,9 @@ const HomePage = () => {
                 <Linkedin size={24} />
               </a>
               <a
-                href="mailto:farnoushfdf@gmail.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=farnoushfdf@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Email Farnoush"
                 className="text-stone-600 transition hover:text-emerald-700"
               >

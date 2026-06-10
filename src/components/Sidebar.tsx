@@ -30,8 +30,12 @@ const Sidebar = () => {
           <Code size={24} />
         </Link>
         <a
-          href="#contact"
-          className="p-2 hover:bg-gray-800 rounded-lg transition-colors"
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=farnoushfdf@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Contact by email"
+          title="Contact"
+          className="rounded-lg p-2 transition-colors hover:bg-stone-800"
         >
           <Mail size={24} />
         </a>

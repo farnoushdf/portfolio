@@ -45,7 +45,9 @@ const Navbar = () => {
               Skills
             </Link>
             <a
-              href="mailto:farnoushfdf@gmail.com"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=farnoushfdf@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-md bg-stone-950 px-4 py-2 text-sm font-semibold text-white transition hover:bg-emerald-700"
             >
               Contact
